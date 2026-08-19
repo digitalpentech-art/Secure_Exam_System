@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Result extends Model
+{
+    protected $guarded = [];
+
+    public function student()
+    {
+        return $this->belongsTo(User::class, 'student_id');
+    }
+
+    public function examination()
+    {
+        return $this->belongsTo(Examination::class);
+    }
+}
